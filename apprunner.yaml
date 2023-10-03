@@ -1,0 +1,14 @@
+version: 1.0
+runtime: python3
+build:
+  commands:
+    build:
+      - pip install -r requirements.txt
+  env:
+    - name: FOO
+      value: "bar"
+run:
+  command: python application.py
+  network: 
+    port: 8000
+    env: FLASK_RUN_PORT 
